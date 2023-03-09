@@ -1,8 +1,8 @@
 import socket
 import threading
+import sys
 from .response import Response
 from .main import Main
-#from .client import Client
 
 class Server():
     def __init__(self, host, port, domain):
@@ -15,7 +15,6 @@ class Server():
     def start(self):
         self.server.listen()
         print("Server started listening.")
-        
         while True:
             connection, address = self.server.accept()
             thread = threading.Thread(target=self.connect(connection, address))
@@ -37,7 +36,6 @@ class Server():
 
             match cmd: 
                 case 'signup':
-                    print("here")
                     res = Main(self.domain).signup(email, password)
                     res = Response(res.type, res.message).value().encode()
                     connection.send(res)
@@ -46,6 +44,34 @@ class Server():
                     res = Main(self.domain).login(email, password)
                     res = Response(res.type, res.message).value().encode()
                     connection.send(res)
+                    break
+                case 'mailbox':
+                    res = Main(self.domain).mailbox(email)
+                    res = Response('Success', res.data).value().encode()
+                    connection.send(res)
+                    break
+                case 'send':
+                    res = Main(self.domain).send(email, rcv, subject, body)
+                    res = Response('Success', res.message).value().encode()
+                    connection.send(res)
+                    break
+                case 'open': 
+                    res = Main(self.domain).open(email, id_msg)
+                    res = Response('Success', res.data).value().encode()
+                    connection.send(res)
+                    break
+                case 'delete':
+                    res = Main(self.domain).delete(email, id_msg)
+                    res = Response('Success', res.message).value().encode()
+                    connection.send(res)
+                    break
+                case 'clear':
+                    res = Main(self.domain).clear(email)
+                    res = Response('Success', res.message).value().encode()
+                    connection.send(res)
+                    break
+                case 'quit':
+                    sys.exit(0)
                     break
         
         connection.close()
