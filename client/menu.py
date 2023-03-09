@@ -8,4 +8,4 @@ def MenuMain():
     print('3 - Send email')
     print('4 - Delete email')
     print('5 - Clear mailbox')
-    print('6 - Quit')
+    print('6 - Logout')
