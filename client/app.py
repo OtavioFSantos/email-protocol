@@ -37,7 +37,7 @@ while True:
                         case '3': # Send email
                             print(f'\033[;1m{"-"*10 + " Send Email " + "-"*10 + "":^50}\033[m')
                             rcv = str(input('Type receiver email: ')).lower()
-                            subject = str(input('ype subject: '))
+                            subject = str(input('Type subject: '))
                             body = str(input('Type email body: '))
                             print(client.send(f'send/{email}/false/false/{subject}/{body}/{rcv}'))
 
