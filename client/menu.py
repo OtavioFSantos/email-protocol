@@ -1,11 +1,11 @@
 def MenuLogin():
     print('\n1 - Login')
-    print('2 - Registrar-se')
+    print('2 - Sign Up')
 
-def MenuMaster():
-    print('\n1 - Caixa de entrada')
-    print('2 - Ver mensagem')
-    print('3 - Enviar mensagem')
-    print('4 - Deletar mensagem')
-    print('5 - Limpar caixa de entrada')
-    print('6 - Logout')
+def MenuMain():
+    print('\n1 - Mailbox')
+    print('2 - Open email')
+    print('3 - Send email')
+    print('4 - Delete email')
+    print('5 - Clear mailbox')
+    print('6 - Quit')
