@@ -10,7 +10,7 @@ while True:
     op = str(input('\nSelect a option: '))
 
     match op:
-        case '1':
+        case '1': # Login
             email = str(input('Type your email: ')).lower()
             password = str(input('Type your password: '))
             res = client.send(f'login/{email}/{password}/false/false/false/false')
@@ -63,7 +63,7 @@ while True:
             else:
                 print("Email or password incorrect.")
         
-        case '2': 
+        case '2': # Signup
             email = str(input('Type your email: ')).lower()
             password = str(input('Type your password: '))
             print(client.send(f'signup/{email}/{password}/false/false/false/false'))

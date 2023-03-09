@@ -15,9 +15,9 @@ class Server():
     def start(self):
         self.server.listen()
         print("Server started listening.")
-        while True:
+        while True: # Listening to clients
             connection, address = self.server.accept()
-            thread = threading.Thread(target=self.connect(connection, address))
+            thread = threading.Thread(target=self.connect(connection, address)) # Threads to listen to more than one client
             thread.start()
 
     def connect(self, connection, address):
@@ -25,6 +25,8 @@ class Server():
             msg = connection.recv(1024)
             msg = msg.decode()
             msg = msg.split('/')
+
+            # Message format is: cmd/email/password/id_msg/subject/body/rcv
 
             cmd = msg[0]
             email = msg[1]
@@ -36,7 +38,7 @@ class Server():
 
             match cmd: 
                 case 'signup':
-                    res = Main(self.domain).signup(email, password)
+                    res = Main(self.domain).signup(email, password) # Call main function 'signup'
                     res = Response(res.type, res.message).value().encode()
                     connection.send(res)
                     break

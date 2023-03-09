@@ -9,7 +9,7 @@ class Client():
         self.__client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.__client.connect((self._HOST, self._PORT))
         message = msg.encode()
-        self.__client.send(message) 
+        self.__client.send(message) # Send message to server
         response = self.__client.recv(1024).decode()
         self.__client.close()
         return response
