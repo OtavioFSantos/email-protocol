@@ -1,6 +1,5 @@
 import socket
 import threading
-import sys
 from .response import Response
 from .main import Main
 
@@ -73,7 +72,7 @@ class Server():
                     connection.send(res)
                     break
                 case 'quit':
-                    sys.exit(0)
+                    connection.close()                    
                     break
         
         connection.close()

@@ -7,11 +7,8 @@
         "Subject": "explode",
         "Body": "sockets explodem o pc"
       },
-      {
-        "From": "otavio@gmail.com",
-        "Subject": "cilindro",
-        "Body": "pow pow"
-      }
+      { "From": "otavio@gmail.com", "Subject": "cilindro", "Body": "pow pow" },
+      { "From": "otavio@gmail.com", "Subject": "teste", "Body": "bunda" }
     ]
   },
   "otavio@gmail.com": {
@@ -31,6 +28,11 @@
         "From": "luize@gmail.com",
         "Subject": "catapimbas",
         "Body": "email criativo"
+      },
+      {
+        "From": "guilherme@gmail.com",
+        "Subject": "abacate",
+        "Body": "abluaablua"
       }
     ]
   },
