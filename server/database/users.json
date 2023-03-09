@@ -1,5 +1,38 @@
 {
-  "guilherme@gmail.com": { "Password": "123", "Messages": [] },
-  "otavio@gmail.com": { "Password": "123", "Messages": [] },
-  "teste": { "Password": "123", "Messages": [] }
+  "guilherme@gmail.com": {
+    "Password": "123",
+    "Emails": [
+      {
+        "From": "luize@gmail.com",
+        "Subject": "explode",
+        "Body": "sockets explodem o pc"
+      },
+      {
+        "From": "otavio@gmail.com",
+        "Subject": "cilindro",
+        "Body": "pow pow"
+      }
+    ]
+  },
+  "otavio@gmail.com": {
+    "Password": "123",
+    "Emails": [
+      {
+        "From": "guilherme@gmail.com",
+        "Subject": "banana",
+        "Body": "banana eh legal"
+      },
+      {
+        "From": "guilherme@gmail.com",
+        "Subject": "nescau",
+        "Body": "gosto de nescau"
+      },
+      {
+        "From": "luize@gmail.com",
+        "Subject": "catapimbas",
+        "Body": "email criativo"
+      }
+    ]
+  },
+  "luize@gmail.com": { "Password": "456", "Emails": [] }
 }
