@@ -32,7 +32,7 @@ class Main:
     
     def mailbox(self, email): # Mailbox
         if self.users[email]['Emails'] == []: # Check if there are emails 
-            return Response(type='Error', message='There are no messages.')
+            return Response(type='Error', message='You have no messages.')
         data = ''
         for i in range(len(self.users[email]['Emails'])):
             data += (f'{i+1} - Subject: {self.users[email]["Emails"][i]["Subject"]}\n')
