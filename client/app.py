@@ -1,5 +1,6 @@
 from menu import *
 from client import Client
+import sys
 
 client = Client('localhost', 7777)
 
@@ -67,3 +68,6 @@ while True:
             email = str(input('Type your email: ')).lower()
             password = str(input('Type your password: '))
             print(client.send(f'signup/{email}/{password}/false/false/false/false'))
+        
+        case '3': # Close
+            sys.exit(0)

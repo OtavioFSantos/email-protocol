@@ -1,6 +1,7 @@
 def MenuLogin():
     print('\n1 - Login')
     print('2 - Sign Up')
+    print('3 - Close')
 
 def MenuMain():
     print('\n1 - Mailbox')

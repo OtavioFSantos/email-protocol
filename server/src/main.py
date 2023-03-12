@@ -30,7 +30,7 @@ class Main:
         elif password == self.users[email]['Password']:
             return Response(type='Success', message='Login successful.')
     
-    def mailbox(self, email): # Mailbox3
+    def mailbox(self, email): # Mailbox
         if self.users[email]['Emails'] == []: # Check if there are emails 
             return Response(type='Error', message='There are no messages.')
         data = ''
