@@ -57,7 +57,7 @@ class Server():
                     break
                 case 'send':
                     res = Main(self.domain).send(email, rcv, subject, body)
-                    res = Response('Success', res.message).value().encode()
+                    res = Response(res.type, res.message).value().encode()
                     connection.send(res)
                     break
                 case 'open': 
@@ -70,12 +70,12 @@ class Server():
                     break
                 case 'delete':
                     res = Main(self.domain).delete(email, id_msg)
-                    res = Response('Success', res.message).value().encode()
+                    res = Response(res.type, res.message).value().encode()
                     connection.send(res)
                     break
                 case 'clear':
                     res = Main(self.domain).clear(email)
-                    res = Response('Success', res.message).value().encode()
+                    res = Response(res.type, res.message).value().encode()
                     connection.send(res)
                     break
                 case 'quit':
