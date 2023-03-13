@@ -53,7 +53,6 @@ class Server():
                     else: 
                         res = Response(res.type, res.message).value().encode()
                     connection.send(res)
-
                     break
                 case 'send':
                     res = Main(self.domain).send(email, rcv, subject, body)
