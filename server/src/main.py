@@ -48,6 +48,8 @@ class Main:
     def open(self, email, id_msg): # Open email
         if not self.users[email]['Emails']: # Check if there are emails
             return Response(type='Error', message='You have no messages.')
+        if int(id_msg) > len(self.users[email]['Emails']):
+            return Response(type='Error', message='You have no message with that index.')
         return Response(type='Success', message='', data=
         f'From: {self.users[email]["Emails"][int(id_msg)]["From"]}\n'
         f'Subject: {self.users[email]["Emails"][int(id_msg)]["Subject"]}\n'
@@ -56,6 +58,8 @@ class Main:
     def delete(self, email, id_msg): # Delete email
         if not self.users[email]['Emails']: # Check if there are emails
             return Response(type='Error', message='You have no messages.')
+        if int(id_msg) > len(self.users[email]['Emails']):
+            return Response(type='Error', message='You have no message with that index.')
         self.users[email]['Emails'].pop(int(id_msg))
         self.save_users()
         return Response(type='Success', message='Email deleted successfully.')
