@@ -62,7 +62,7 @@ while True:
                             print("Please type a valid option.")
             
             else:
-                print("Email or password incorrect.")
+                print(res)
         
         case '2': # Signup
             email = str(input('Type your email: ')).lower()

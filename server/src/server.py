@@ -48,8 +48,12 @@ class Server():
                     break
                 case 'mailbox':
                     res = Main(self.domain).mailbox(email)
-                    res = Response('Success', res.data).value().encode()
+                    if res.type == 'Success':
+                        res = Response(res.type, res.data).value().encode()
+                    else: 
+                        res = Response(res.type, res.message).value().encode()
                     connection.send(res)
+
                     break
                 case 'send':
                     res = Main(self.domain).send(email, rcv, subject, body)
@@ -58,7 +62,10 @@ class Server():
                     break
                 case 'open': 
                     res = Main(self.domain).open(email, id_msg)
-                    res = Response('Success', res.data).value().encode()
+                    if res.type == 'Success':
+                        res = Response(res.type, res.data).value().encode()
+                    else: 
+                        res = Response(res.type, res.message).value().encode()
                     connection.send(res)
                     break
                 case 'delete':
