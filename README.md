@@ -1,6 +1,6 @@
 # Para executar:
 
-Primeiramente será modificar duas funções.
+Primeiramente será necessário modificar duas funções.
 
 Abra o arquivo server/src/main.py e modifique as funções load_users e save_users,
 o caminho a ser passado é o do arquivo json presente em server/database/
